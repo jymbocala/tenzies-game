@@ -1,26 +1,32 @@
-import React from "react"
-import './App.css';
-import Die from './components/Die';
-
+import React from "react";
+import "./App.css";
+import Die from "./components/Die";
 
 export default function App() {
+  const [dice, setDice] = React.useState(allNewDice()); // sets the state of dice to the array of 10 random numbers
+
+  // a function to generate an array of 10 random numbers
+  function allNewDice() {
+    let diceNums = [];
+    for (let i = 0; i < 10; i++) {
+      diceNums.push(Math.ceil(Math.random() * 6));
+    }
+    return diceNums;
+  };
+
+
+  // map over the dice state numbers array to generate 10 Die elements with the value of each number.
+  const diceElements = dice.map((die) => {
+    return <Die value={die} />;
+  });
+
   return (
     <div className="App">
       <main>
-        <div className="dice">
-          <Die value={1} />
-          <Die value={2} />
-          <Die value={3} />
-          <Die value={4} />
-          <Die value={5} />
-          <Die value={6} />
-          <Die value={1} />
-          <Die value={2} />
-          <Die value={3} />
-          <Die value={4} />
+        <div className="dice-container">
+          {diceElements}
         </div>
       </main>
     </div>
   );
 }
-
