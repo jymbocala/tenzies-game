@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Karla', sans-serif;
   min-height: 100vh;
 }
 
@@ -25,14 +25,50 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 90vw;
   height: 90vh;
-  background-color: #fff;
+  background-color: #F5F5F5;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* DICE */
+.dice {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 20px;
+  width: 90%;
+  height: auto;
+  /* background-color: rgb(185, 14, 14); */
+}
 
+.dieEl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+  aspect-ratio: 1 / 1;
+  border-radius: 3.81277px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.dieEl>p {
+  margin: 0;
+}
+
+.dieEl:hover {
+  cursor: pointer;
+}
 
 
 /* MEDIA QUERIES */
@@ -45,5 +81,10 @@ main {
   main {
     width: 450px;
     height: 450px;
+  }
+
+  .dice {
+    border: 1px solid red;
+    padding: 0 20px;
   }
 }
