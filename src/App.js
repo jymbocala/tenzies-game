@@ -20,12 +20,20 @@ export default function App() {
     return <Die value={die} />;
   });
 
+  // a function to generate a new array of 10 random numbers and set the dice state to the new array
+  function rollDice() {
+    setDice(allNewDice());
+  }
+
   return (
     <div className="App">
       <main>
         <div className="dice-container">
           {diceElements}
         </div>
+        <button className="roll-btn" onClick={rollDice}>
+          Roll
+        </button>
       </main>
     </div>
   );

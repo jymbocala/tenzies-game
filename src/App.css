@@ -28,7 +28,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   width: 90vw;
   height: 95vh;
   background-color: #F5F5F5;
@@ -65,6 +65,31 @@ main {
   cursor: pointer;
 }
 
+.roll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+  border-style: none;
+  border-radius: 10px;
+  margin-top: 4rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 24px;
+  color: white;
+  font-family: 'Karla', sans-serif;
+  background: #5035FF;
+  box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+}
+
+.roll-btn:hover {
+  cursor: pointer;
+}
+
+.roll-btn:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
 
 /* MEDIA QUERIES */
 @media (width >= 550px) {
