@@ -23,7 +23,7 @@ export default function App() {
 
   // map over the dice state numbers array to generate 10 Die elements with the value of each number.
   const diceElements = dice.map((die) => (
-    <Die key={die.id} value={die.value} />
+    <Die key={die.id} value={die.value} isHeld={die.isHeld}/>
   ));
 
   // a function to generate a new array of 10 random numbers and set the dice state to the new array
