@@ -20,7 +20,6 @@ export default function App() {
     // set winning state to true if all dice are held and if all dice have the same value
     if (allDiceHeld && allDiceHasSameValue) {
       setTenzies(true);
-      console.log("You won!");
     }
   }, [dice]);
 
@@ -33,7 +32,7 @@ export default function App() {
     };
   }
 
-  // a function to generate an array of objects with 10 random numbers and isHeld set to false by default
+  // generates an array of objects with 10 random numbers and isHeld set to false by default
   function allNewDice() {
     let newDice = [];
     for (let i = 0; i < 10; i++) {
@@ -42,7 +41,7 @@ export default function App() {
     return newDice;
   }
 
-  // a function to flip isHeld value between true and false
+  // flips isHeld value between true and false
   function holdDice(id) {
     setDice((oldDice) =>
       oldDice.map((die) => {
@@ -61,7 +60,7 @@ export default function App() {
     />
   ));
 
-  // a function to generate new dice objects where die.isHeld is set to false
+  // generates new dice objects where die.isHeld is set to false and game has not won. If game is won, restarts the game by setting states.
   function rollDice() {
     if (!tenzies) {
       setDice((oldDice) =>
