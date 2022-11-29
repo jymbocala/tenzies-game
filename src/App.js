@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Die from "./components/Die";
 import { nanoid } from "nanoid";
-import Confetti from 'react-confetti'
+import Confetti from "react-confetti";
 
 export default function App() {
   const [dice, setDice] = React.useState(allNewDice()); // sets the state of dice to the array of 10 random numbers
@@ -13,12 +13,14 @@ export default function App() {
   React.useEffect(() => {
     const allDiceHeld = dice.every((die) => die.isHeld);
     const firstDieValue = dice[0].value;
-    const allDiceHasSameValue = dice.every((die) => die.value === firstDieValue)
+    const allDiceHasSameValue = dice.every(
+      (die) => die.value === firstDieValue
+    );
 
     // set winning state to true if all dice are held and if all dice have the same value
     if (allDiceHeld && allDiceHasSameValue) {
-      setTenzies(true)
-      console.log("You won!")
+      setTenzies(true);
+      console.log("You won!");
     }
   }, [dice]);
 
@@ -61,16 +63,22 @@ export default function App() {
 
   // a function to generate new dice objects where die.isHeld is set to false
   function rollDice() {
-    setDice((oldDice) =>
-      oldDice.map((die) => {
-        return die.isHeld ? die : generateNewDie();
-      })
-    );
+    if (!tenzies) {
+      setDice((oldDice) =>
+        oldDice.map((die) => {
+          return die.isHeld ? die : generateNewDie();
+        })
+      );
+    } else {
+      setTenzies(false)
+      setDice(allNewDice())
+    }
   }
 
   return (
     <div className="App">
       <main>
+        {tenzies && <Confetti />}
         <div className="main--top">
           <h1 className="title">Tenzies</h1>
           <p className="instructions">
@@ -82,7 +90,6 @@ export default function App() {
         <button className="roll-btn" onClick={rollDice}>
           {tenzies ? "New Game" : "Roll"}
         </button>
-        {tenzies && <Confetti/>}
       </main>
     </div>
   );
