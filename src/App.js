@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Die from "./components/Die";
 import { nanoid } from "nanoid";
+import Confetti from 'react-confetti'
 
 export default function App() {
   const [dice, setDice] = React.useState(allNewDice()); // sets the state of dice to the array of 10 random numbers
@@ -79,8 +80,9 @@ export default function App() {
         </div>
         <div className="dice-container">{diceElements}</div>
         <button className="roll-btn" onClick={rollDice}>
-          Roll
+          {tenzies ? "New Game" : "Roll"}
         </button>
+        {tenzies && <Confetti/>}
       </main>
     </div>
   );
