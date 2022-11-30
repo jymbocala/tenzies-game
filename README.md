@@ -29,7 +29,6 @@ The following are some of the topics that I learnt and implemented along the way
 - Complex state
 - Passing state as props
 - Unified state
-- 
 
 
 
