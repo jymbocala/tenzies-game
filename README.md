@@ -13,9 +13,9 @@
 
 ## Description 📝
 
-Tenzies is a popular dice game that encourages fast reactions and is super easy to learn.
+Tenzies is a popular dice game that encourages fast reactions and is super easy to learn. Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
 
-This project was used to drive forward the React concepts that I have been learning so far.
+This project was used to drive forward the React concepts that I have been learning so far. 
 
 
 ## React concepts 💡

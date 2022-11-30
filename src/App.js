@@ -69,8 +69,8 @@ export default function App() {
         })
       );
     } else {
-      setTenzies(false)
-      setDice(allNewDice())
+      setTenzies(false);
+      setDice(allNewDice());
     }
   }
 
